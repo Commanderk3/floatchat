@@ -38,7 +38,7 @@ export default function ChatMessage({
   };
 
   // Typing indicator for bot messages
-  if (message.isTyping && message.sender === "bot") {
+  if (message.isTyping && message.sender === "assistant") {
     return (
       <div className="flex items-start space-x-3 mb-6">
         <Avatar className="w-8 h-8 bg-primary">
@@ -68,7 +68,7 @@ export default function ChatMessage({
     );
   }
 
-  if (message.sender === "user") {
+  if (message.role === "user") {
     return (
       <div
         className="flex justify-end mb-6"
